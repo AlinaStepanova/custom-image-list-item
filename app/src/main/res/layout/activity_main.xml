@@ -9,41 +9,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".MainActivity">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivPoster"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFindRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/vColor"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:alpha="0.475"
-            app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
-            app:layout_constraintDimensionRatio="2.75"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:textSize="24sp"
-            android:layout_width="match_parent"
-            android:padding="16dp"
-            android:alpha="1"
-            android:text="Some text to display"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/vColor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

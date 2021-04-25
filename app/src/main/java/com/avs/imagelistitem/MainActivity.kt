@@ -18,86 +18,86 @@ import jp.wasabeef.picasso.transformations.CropTransformation
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-    private val target = initTarget()
+    //private val target = initTarget()
+    val list: ArrayList<UIData> = ArrayList(8)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val widthRatio = 1F
-        val heightRatio = 1F
-        val url =
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg/1200px-Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg"
-        val url2 = "https://s3.amazonaws.com/cdn.brecks.com/images/800/73689A.jpg"
-        val url3 =
-            "https://www.gardendesign.com/pictures/images/675x529Max/site_3/asiatic-lily-cappuccino-lily-creative-commons_11653.jpg"
-        val url4 =
-            "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2021%2F02%2F18%2Flily-flower-gardeing-getty-0221-2000.jpg"
-        val url5 =
-            "https://carithers.imgix.net/images/itemVariation/RosesandStargazers-Final4-21012035954.jpg"
-        val url6 = "https://flowersadvice.ru/wp-content/uploads/2018/04/fialka-bolezni.jpg"
-        val url7 =
-            "https://www.bloomsbythebox.com/img/product/xlarge/01747a__rose_blue_vendela_60cm.jpg"
-        val url8 = "https://www.koziel.fr/18894-pdt_1500/wall-of-roses-mural.jpg"
-        val url9 = "https://data.whicdn.com/images/341475698/original.jpg"
-        val url10 = "https://papers.co/wallpaper/papers.co-mq18-red-flower-spring-fun-nature-6-wallpaper.jpg"
-        binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
-            .toBuilder()
-            .setAllCorners(CornerFamily.CUT, 100F)
-            //.setAllCornerSizes(150F)
-            .build()
-        binding.vColor.shapeAppearanceModel = binding.vColor.shapeAppearanceModel
-            .toBuilder()
-            .setBottomLeftCorner(CornerFamily.CUT, 100F)
-            .setBottomRightCorner(CornerFamily.CUT, 100F)
-            .build()
-        Picasso.get()
-            .load(url9)
-            .transform(
-                CropTransformation(
-                    widthRatio,
-                    heightRatio,
-                    CropTransformation.GravityHorizontal.CENTER,
-                    CropTransformation.GravityVertical.CENTER
-                )
-            )
-            .into(target)
-        binding.ivPoster.tag = target
+//        val widthRatio = 1F
+//        val heightRatio = 1F
+//        list.add(UIData(url, "Title 1", "Some description 1"))
+//        list.add(UIData(url2, "Title 2", "Some description 2"))
+//        list.add(UIData(url3, "Title 3", "Some description 3"))
+//        list.add(UIData(url4, "Title 4", "Some description 4"))
+//        list.add(UIData(url5, "Title 5", "Some description 5"))
+//        list.add(UIData(url6, "Title 5", "Some description 6"))
+//        list.add(UIData(url7, "Title 7", "Some description 7"))
+//        binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
+//            .toBuilder()
+//            .setAllCorners(CornerFamily.ROUNDED, 100F)
+//            //.setAllCornerSizes(150F)
+//            .build()
+//        binding.vBackgroundColor.shapeAppearanceModel =
+//            binding.vBackgroundColor.shapeAppearanceModel
+//                .toBuilder()
+//                .setBottomLeftCorner(CornerFamily.ROUNDED, 100F)
+//                .setBottomRightCorner(CornerFamily.ROUNDED, 100F)
+//                .build()
+//        Picasso.get()
+//            .load(list[0].url)
+//            .transform(
+//                CropTransformation(
+//                    widthRatio,
+//                    heightRatio,
+//                    CropTransformation.GravityHorizontal.CENTER,
+//                    CropTransformation.GravityVertical.CENTER
+//                )
+//            )
+//            .into(target)
+//        binding.ivPoster.tag = target
     }
 
-    private fun initTarget(): Target {
-        return object : Target {
-            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
-                bitmap?.let {
-                    binding.ivPoster.setImageBitmap(bitmap)
-                    Palette.from(bitmap)
-                        .generate { palette ->
-                            palette?.let {
-                                val swatch = it.dominantSwatch
-                                binding.vColor.setBackgroundColor(
-                                    swatch?.rgb ?: getColorById(R.color.black)
-                                )
-                                if (swatch != null) {
-                                    binding.tvTitle.setTextColor(
-                                        ColorUtils.setAlphaComponent(swatch.titleTextColor, 255)
-                                    )
-                                } else {
-                                    binding.tvTitle.setTextColor(getColorById(R.color.white))
-                                }
-                            }
-                        }
-                }
-            }
-
-            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {}
-
-            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
-        }
-    }
+//    private fun initTarget(): Target {
+//        return object : Target {
+//            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+//                bitmap?.let {
+//                    binding.ivPoster.setImageBitmap(bitmap)
+//                    Palette.from(bitmap)
+//                        .generate { palette ->
+//                            palette?.let {
+//                                val swatch = it.dominantSwatch
+//                                binding.vBackgroundColor.setBackgroundColor(
+//                                    swatch?.rgb ?: getColorById(R.color.black)
+//                                )
+//                                if (swatch != null) {
+//                                    binding.tvTitle.setTextColor(
+//                                        ColorUtils.setAlphaComponent(swatch.titleTextColor, 255)
+//                                    )
+//                                    binding.tvSubTitle.setTextColor(
+//                                        ColorUtils.setAlphaComponent(swatch.bodyTextColor, 255)
+//                                    )
+//                                } else {
+//                                    binding.tvTitle.setTextColor(getColorById(R.color.white))
+//                                    binding.tvSubTitle.setTextColor(getColorById(R.color.white))
+//                                }
+//                                binding.tvTitle.text = list[0].title
+//                                binding.tvSubTitle.text = list[0].subTitle
+//                            }
+//                        }
+//                }
+//            }
+//
+//            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {}
+//
+//            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+//        }
+//    }
 
     private fun getColorById(id: Int) = ContextCompat.getColor(this, id)
 
-    override fun onDestroy() {
-        Picasso.get().cancelRequest(target)
-        super.onDestroy()
-    }
+//    override fun onDestroy() {
+//        Picasso.get().cancelRequest(target)
+//        super.onDestroy()
+//    }
 }
