@@ -17,4 +17,8 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
         return ItemViewHolder.from(parent)
     }
 
+    override fun onViewRecycled(holder: ItemViewHolder) {
+        holder.cleanup()
+    }
+
 }

@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
-import com.squareup.picasso.Target
 import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemBinding
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
+import com.squareup.picasso.Target
 
 class ItemViewHolder private constructor(private val binding: ListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -44,6 +44,11 @@ class ItemViewHolder private constructor(private val binding: ListItemBinding) :
         Picasso.get()
             .load(item.url)
             .into(target)
+    }
+
+    fun cleanup() {
+        Picasso.get().cancelRequest(target)
+        binding.ivPoster.setImageDrawable(null)
     }
 
     private fun initTarget(item: UIData, context: Context): Target {

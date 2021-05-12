@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
 import com.avs.imagelistitem.databinding.ActivityMainBinding
 import com.avs.imagelistitem.recycler_view.ItemListener
 import com.avs.imagelistitem.recycler_view.ItemsAdapter
@@ -12,7 +11,7 @@ import com.avs.imagelistitem.recycler_view.ItemsAdapter
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-    private val list: ArrayList<UIData> = ArrayList(8)
+    private val list: ArrayList<UIData> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,5 +32,10 @@ class MainActivity : AppCompatActivity() {
         )
         binding.rvRecyclerView.adapter = adapter
         adapter.submitList(list)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        binding.rvRecyclerView.adapter = null
     }
 }
