@@ -22,10 +22,13 @@ class MainActivity : AppCompatActivity() {
         list.add(UIData(url3, "Title 3", "Some description 3"))
         list.add(UIData(url4, "Title 4", "Some description 4"))
         list.add(UIData(url5, "Title 5", "Some description 5"))
-        list.add(UIData(url6, "Title 5", "Some description 6"))
+        list.add(UIData(url6, "Title 6", "Some description 6"))
         list.add(UIData(url7, "Title 7", "Some description 7"))
+        list.add(UIData(url8, "Title 8", "Some description 8"))
+        list.add(UIData(url9, "Title 9", "Some description 9"))
+        list.add(UIData(url10, "Title 10", "Some description 10"))
         val adapter = ItemsAdapter(
-            ItemListener { item -> Log.d("jjjkkk", item.toString()) }
+            ItemListener { item -> Log.d("items", item.toString()) }
         , context = this
         )
         binding.rvRecyclerView.adapter = adapter

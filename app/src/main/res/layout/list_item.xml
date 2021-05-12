@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="@{() -> itemClickListener.onClick(uiData)}"
         tools:context=".MainActivity">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -34,7 +35,7 @@
             android:id="@+id/vBackgroundColor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:alpha="0.5"
+            android:alpha="0.6"
             app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
             app:layout_constraintDimensionRatio="2.75"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,8 +56,9 @@
             android:id="@+id/tvSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:paddingBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="28dp"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
             app:layout_constraintEnd_toEndOf="parent"

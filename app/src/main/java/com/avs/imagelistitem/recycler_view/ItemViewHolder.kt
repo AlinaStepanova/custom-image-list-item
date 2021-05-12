@@ -66,14 +66,18 @@ class ItemViewHolder private constructor(private val binding: ListItemBinding) :
                                         ColorUtils.setAlphaComponent(swatch.bodyTextColor, 255)
                                     )
                                 } else {
-                                    binding.tvTitle.setTextColor(getColorById(
-                                        context,
-                                        R.color.white
-                                    ))
-                                    binding.tvSubTitle.setTextColor(getColorById(
-                                        context,
-                                        R.color.white
-                                    ))
+                                    binding.tvTitle.setTextColor(
+                                        getColorById(
+                                            context,
+                                            R.color.white
+                                        )
+                                    )
+                                    binding.tvSubTitle.setTextColor(
+                                        getColorById(
+                                            context,
+                                            R.color.white
+                                        )
+                                    )
                                 }
                                 binding.tvTitle.text = item.title
                                 binding.tvSubTitle.text = item.subTitle
