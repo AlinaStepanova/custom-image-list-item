@@ -16,16 +16,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        list.add(UIData(url, "Title 1", "Some description 1"))
-        list.add(UIData(url2, "Title 2", "Some description 2"))
-        list.add(UIData(url3, "Title 3", "Some description 3"))
-        list.add(UIData(url4, "Title 4", "Some description 4"))
-        list.add(UIData(url5, "Title 5", "Some description 5"))
-        list.add(UIData(url6, "Title 6", "Some description 6"))
-        list.add(UIData(url7, "Title 7", "Some description 7"))
-        list.add(UIData(url8, "Title 8", "Some description 8"))
-        list.add(UIData(url9, "Title 9", "Some description 9"))
-        list.add(UIData(url10, "Title 10", "Some description 10"))
+        list.add(UIData(1, url, "Title 1", "Some description 1"))
+        list.add(UIData(2, url2, "Title 2", "Some description 2"))
+        list.add(UIData(3, url3, "Title 3", "Some description 3"))
+        list.add(UIData(4, url4, "Title 4", "Some description 4"))
+        list.add(UIData(5, url5, "Title 5", "Some description 5"))
+        list.add(UIData(6, url6, "Title 6", "Some description 6"))
+        list.add(UIData(7, url7, "Title 7", "Some description 7"))
+        list.add(UIData(8, url8, "Title 8", "Some description 8"))
+        list.add(UIData(9, url9, "Title 9", "Some description 9"))
+        list.add(UIData(10, url10, "Title 10", "Some description 10"))
         val adapter = ItemsAdapter(
             ItemListener { item -> Log.d("items", item.toString()) }
         , context = this
