@@ -1,4 +1,4 @@
-package com.avs.imagelistitem
+package com.avs.imagelistitem.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.avs.imagelistitem.*
 import com.avs.imagelistitem.databinding.FragmentFlowersBinding
 import com.avs.imagelistitem.recycler_view.ItemListener
 import com.avs.imagelistitem.recycler_view.ItemsAdapter
