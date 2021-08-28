@@ -135,7 +135,7 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
 
         companion object {
 
-            const val CORNER_SIZE = 100F
+            const val CORNER_SIZE = 75F
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)

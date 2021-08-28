@@ -17,5 +17,9 @@ const val url7 =
 const val url8 =
     "https://vseroste.com.ua/uploads/shop/products/large/baf51aa7-378e-11ea-99d5-9ad4867ba484.jpg"
 const val url9 = "https://yaskrava.com.ua/image/cache/7b52ebdf8e00eacf59d28e7bc20a9202.jpg"
-const val url10 =
-    "https://papers.co/wallpaper/papers.co-mq18-red-flower-spring-fun-nature-6-wallpaper.jpg"
+const val url10 = "https://papers.co/wallpaper/papers.co-mq18-red-flower-spring-fun-nature-6-wallpaper.jpg"
+const val url11 = "https://www.bella-toscana.com/wp-content/uploads/2019/05/pisa-tuscany.jpg"
+const val url12 = "https://i.pinimg.com/736x/90/e1/e6/90e1e60ef35fe7f8b9284f759c32c5e6--black-panthers-the-panthers.jpg"
+const val url13 = "https://www.dntghana.com/wp-content/uploads/2021/08/Africa-Landscape.jpg"
+const val url14 = "https://cookieandkate.com/images/2020/11/best-green-beans-recipe-2-2.jpg"
+const val url15 = "https://static.posters.cz/image/750/Плакати/gustav-klimt-kiss-i106942.jpg"

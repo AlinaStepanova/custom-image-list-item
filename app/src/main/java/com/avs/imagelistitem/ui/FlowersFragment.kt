@@ -38,7 +38,6 @@ class FlowersFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(1, url, "Title 1", "Some description 1"))
         list.add(UIData(2, url2, "Title 2", "Some description 2"))
         list.add(UIData(3, url3, "Title 3", "Some description 3"))
         list.add(UIData(4, url4, "Title 4", "Some description 4"))

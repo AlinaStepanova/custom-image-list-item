@@ -42,10 +42,12 @@ class HomeFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(1, url, "Title 1"))
-        list.add(UIData(2, url2, "Title 2"))
-        list.add(UIData(3, url9, "Title 3"))
-        list.add(UIData(4, url10, "Title 4"))
+        list.add(UIData(1, url, "Flowers"))
+        list.add(UIData(2, url11, "Cities"))
+        list.add(UIData(3, url12, "Animals"))
+        list.add(UIData(4, url13, "Landscapes"))
+        list.add(UIData(5, url14, "Food"))
+        list.add(UIData(6, url15, "Artworks"))
         return list
     }
 
