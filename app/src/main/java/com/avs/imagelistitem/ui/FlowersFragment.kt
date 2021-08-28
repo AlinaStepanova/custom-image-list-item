@@ -12,10 +12,9 @@ import com.avs.imagelistitem.databinding.FragmentFlowersBinding
 import com.avs.imagelistitem.recycler_view.ItemListener
 import com.avs.imagelistitem.recycler_view.ItemsAdapter
 
-class FlowersFragment: Fragment() {
+class FlowersFragment : Fragment() {
 
     private lateinit var binding: FragmentFlowersBinding
-    private val list: ArrayList<UIData> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +25,19 @@ class FlowersFragment: Fragment() {
             inflater, R.layout.fragment_flowers, container, false
         )
         val root: View = binding.root
+        val adapter = this.context?.let {
+            ItemsAdapter(
+                ItemListener { item -> Log.d("items", item.toString()) }, context = it
+            )
+        }
+        binding.rvRecyclerView.adapter = adapter
+        val list: ArrayList<UIData> = setUpUIData()
+        adapter?.submitList(list)
+        return root
+    }
+
+    private fun setUpUIData(): ArrayList<UIData> {
+        val list: ArrayList<UIData> = ArrayList()
         list.add(UIData(1, url, "Title 1", "Some description 1"))
         list.add(UIData(2, url2, "Title 2", "Some description 2"))
         list.add(UIData(3, url3, "Title 3", "Some description 3"))
@@ -36,14 +48,7 @@ class FlowersFragment: Fragment() {
         list.add(UIData(8, url8, "Title 8", "Some description 8"))
         list.add(UIData(9, url9, "Title 9", "Some description 9"))
         list.add(UIData(10, url10, "Title 10", "Some description 10"))
-        val adapter = this.context?.let {
-            ItemsAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }, context = it
-            )
-        }
-        binding.rvRecyclerView.adapter = adapter
-        adapter?.submitList(list)
-        return root
+        return list
     }
 
     override fun onStop() {

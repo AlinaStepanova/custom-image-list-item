@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
@@ -47,6 +48,9 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
             binding.itemClickListener = movieClickListener
             binding.uiData = item
             target = initTarget(item, context)
+            if (item.subTitle == null) {
+                binding.tvSubTitle.visibility = View.GONE
+            }
             binding.ivPoster.tag = target
             binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
                 .toBuilder()
