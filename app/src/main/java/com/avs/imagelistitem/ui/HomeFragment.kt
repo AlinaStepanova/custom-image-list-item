@@ -44,8 +44,8 @@ class HomeFragment : Fragment() {
         val list: ArrayList<UIData> = ArrayList()
         list.add(UIData(1, url, "Title 1"))
         list.add(UIData(2, url2, "Title 2"))
-        list.add(UIData(3, url3, "Title 3"))
-        list.add(UIData(4, url4, "Title 4"))
+        list.add(UIData(3, url9, "Title 3"))
+        list.add(UIData(4, url10, "Title 4"))
         return list
     }
 

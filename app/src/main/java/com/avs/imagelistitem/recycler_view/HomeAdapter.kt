@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.HomeListItemBinding
-import com.avs.imagelistitem.databinding.ListItemBinding
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
@@ -25,7 +23,7 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(clickListener, item, context)
+        holder.bind(clickListener, item, position, context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -44,6 +42,7 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
         fun bind(
             movieClickListener: ItemListener,
             item: UIData,
+            position: Int,
             context: Context
         ) {
             binding.itemClickListener = movieClickListener
@@ -53,17 +52,29 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
                 binding.tvSubTitle.visibility = View.GONE
             }
             binding.ivPoster.tag = target
-            binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
-                .toBuilder()
-                .setAllCorners(CornerFamily.ROUNDED, 100F)
-                //.setAllCornerSizes(150F)
-                .build()
-            binding.vBackgroundColor.shapeAppearanceModel =
-                binding.vBackgroundColor.shapeAppearanceModel
+            if (position % 2 == 0) {
+                binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
                     .toBuilder()
-                    .setBottomLeftCorner(CornerFamily.ROUNDED, 100F)
-                    .setBottomRightCorner(CornerFamily.ROUNDED, 100F)
+                    .setTopLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                    .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
                     .build()
+                binding.vBackgroundColor.shapeAppearanceModel =
+                    binding.vBackgroundColor.shapeAppearanceModel
+                        .toBuilder()
+                        .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .build()
+            } else {
+                binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
+                    .toBuilder()
+                    .setTopRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                    .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                    .build()
+                binding.vBackgroundColor.shapeAppearanceModel =
+                    binding.vBackgroundColor.shapeAppearanceModel
+                        .toBuilder()
+                        .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .build()
+            }
             Picasso.get()
                 .load(item.url)
                 .into(target)
@@ -123,6 +134,9 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
         private fun getColorById(context: Context, id: Int) = ContextCompat.getColor(context, id)
 
         companion object {
+
+            const val CORNER_SIZE = 100F
+
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = HomeListItemBinding.inflate(layoutInflater, parent, false)
