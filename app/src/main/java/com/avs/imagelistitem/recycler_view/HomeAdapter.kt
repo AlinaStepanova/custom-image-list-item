@@ -77,6 +77,8 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
             }
             Picasso.get()
                 .load(item.url)
+                .placeholder(R.drawable.ic_baseline_image_24)
+                .error(R.drawable.ic_baseline_broken_image_24)
                 .into(target)
         }
 
@@ -106,16 +108,10 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
                                         )
                                     } else {
                                         binding.tvTitle.setTextColor(
-                                            getColorById(
-                                                context,
-                                                R.color.white
-                                            )
+                                            getColorById(context, R.color.white)
                                         )
                                         binding.tvSubTitle.setTextColor(
-                                            getColorById(
-                                                context,
-                                                R.color.white
-                                            )
+                                            getColorById(context, R.color.white)
                                         )
                                     }
                                     binding.tvTitle.text = item.title
@@ -125,9 +121,13 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
                     }
                 }
 
-                override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {}
+                override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                    binding.ivPoster.setImageDrawable(errorDrawable)
+                }
 
-                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+                    binding.ivPoster.setImageDrawable(placeHolderDrawable)
+                }
             }
         }
 

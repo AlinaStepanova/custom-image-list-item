@@ -54,17 +54,18 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
             binding.ivPoster.tag = target
             binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
                 .toBuilder()
-                .setAllCorners(CornerFamily.ROUNDED, 100F)
-                //.setAllCornerSizes(150F)
+                .setAllCorners(CornerFamily.ROUNDED, CORNER_SIZE)
                 .build()
             binding.vBackgroundColor.shapeAppearanceModel =
                 binding.vBackgroundColor.shapeAppearanceModel
                     .toBuilder()
-                    .setBottomLeftCorner(CornerFamily.ROUNDED, 100F)
-                    .setBottomRightCorner(CornerFamily.ROUNDED, 100F)
+                    .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                    .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
                     .build()
             Picasso.get()
                 .load(item.url)
+                .placeholder(R.drawable.ic_baseline_image_24)
+                .error(R.drawable.ic_baseline_broken_image_24)
                 .into(target)
         }
 
@@ -94,16 +95,10 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
                                         )
                                     } else {
                                         binding.tvTitle.setTextColor(
-                                            getColorById(
-                                                context,
-                                                R.color.white
-                                            )
+                                            getColorById(context, R.color.white)
                                         )
                                         binding.tvSubTitle.setTextColor(
-                                            getColorById(
-                                                context,
-                                                R.color.white
-                                            )
+                                            getColorById(context, R.color.white)
                                         )
                                     }
                                     binding.tvTitle.text = item.title
@@ -113,15 +108,22 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
                     }
                 }
 
-                override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {}
+                override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                    binding.ivPoster.setImageDrawable(errorDrawable)
+                }
 
-                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+                override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+                    binding.ivPoster.setImageDrawable(placeHolderDrawable)
+                }
             }
         }
 
         private fun getColorById(context: Context, id: Int) = ContextCompat.getColor(context, id)
 
         companion object {
+
+            const val CORNER_SIZE = 100F
+
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ListItemBinding.inflate(layoutInflater, parent, false)
