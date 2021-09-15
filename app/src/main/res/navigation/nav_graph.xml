@@ -12,10 +12,17 @@
         <action
             android:id="@+id/action_homeFragment_to_flowersFragment"
             app:destination="@id/flowersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/flowersFragment"
         android:name="com.avs.imagelistitem.ui.FlowersFragment"
         tools:layout="@layout/fragment_flowers" />
+    <fragment
+        android:id="@+id/animalsFragment"
+        android:name="com.avs.imagelistitem.ui.AnimalsFragment"
+        android:label="AnimalsFragment" />
 </navigation>

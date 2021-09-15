@@ -29,8 +29,12 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         val adapter = this.context?.let {
             HomeAdapter(
-                ItemListener {
-                    findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
+                ItemListener { data ->
+                    if (data.id == 3) {
+                        findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
+                    } else {
+                        findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
+                    }
                 }, context = it
             )
         }
