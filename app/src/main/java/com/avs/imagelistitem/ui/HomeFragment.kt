@@ -1,4 +1,4 @@
-package com.avs.imagelistitem.ui
+ package com.avs.imagelistitem.ui
 
 import android.os.Bundle
 import android.util.Log
