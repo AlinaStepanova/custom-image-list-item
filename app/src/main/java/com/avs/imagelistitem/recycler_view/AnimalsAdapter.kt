@@ -1,5 +1,6 @@
 package com.avs.imagelistitem.recycler_view
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -35,12 +36,16 @@ class AnimalsAdapter(private val clickListener: ItemListener) :
                 .build()
             Picasso.get()
                 .load(item.url)
+                .resize(CIRCLE_SIZE, CIRCLE_SIZE)
+                .centerCrop(Gravity.TOP)
                 .placeholder(R.drawable.ic_baseline_image_24)
                 .error(R.drawable.ic_baseline_broken_image_24)
                 .into(binding.ivPoster)
         }
 
         companion object {
+
+            const val CIRCLE_SIZE = 480
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)

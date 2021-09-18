@@ -38,12 +38,12 @@ class AnimalsFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(2, url2))
-        list.add(UIData(3, url3))
-        list.add(UIData(4, url4))
-        list.add(UIData(5, url5))
-        list.add(UIData(6, url6))
-        list.add(UIData(7, url7))
+        list.add(UIData(2, url16))
+        list.add(UIData(3, url17))
+        list.add(UIData(4, url18))
+        list.add(UIData(5, url19))
+        list.add(UIData(6, url20))
+        list.add(UIData(7, url21))
         return list
     }
 
