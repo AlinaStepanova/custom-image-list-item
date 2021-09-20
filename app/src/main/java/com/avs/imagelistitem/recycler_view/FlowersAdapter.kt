@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemBinding
@@ -19,8 +19,8 @@ import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
-class ItemsAdapter(private val clickListener: ItemListener, private val context: Context) :
-    ListAdapter<UIData, ItemsAdapter.ItemViewHolder>(ItemDiffCallback()) {
+class FlowersAdapter(private val clickListener: ItemListener, private val context: Context) :
+    ListAdapter<UIData, FlowersAdapter.ItemViewHolder>(ItemDiffCallback()) {
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = getItem(position)
@@ -88,10 +88,10 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
                                     )
                                     if (swatch != null) {
                                         binding.tvTitle.setTextColor(
-                                            ColorUtils.setAlphaComponent(swatch.titleTextColor, 255)
+                                            ColorUtils.setAlphaComponent(swatch.titleTextColor, MAX_ALPHA)
                                         )
                                         binding.tvSubTitle.setTextColor(
-                                            ColorUtils.setAlphaComponent(swatch.bodyTextColor, 255)
+                                            ColorUtils.setAlphaComponent(swatch.bodyTextColor, MAX_ALPHA)
                                         )
                                     } else {
                                         binding.tvTitle.setTextColor(
@@ -131,13 +131,4 @@ class ItemsAdapter(private val clickListener: ItemListener, private val context:
             }
         }
     }
-}
-
-class ItemDiffCallback : DiffUtil.ItemCallback<UIData>() {
-    override fun areItemsTheSame(oldItem: UIData, newItem: UIData) = oldItem.id == newItem.id
-    override fun areContentsTheSame(oldItem: UIData, newItem: UIData) = oldItem == newItem
-}
-
-class ItemListener(val clickListener: (uiData: UIData) -> Unit) {
-    fun onClick(uiData: UIData) = clickListener(uiData)
 }

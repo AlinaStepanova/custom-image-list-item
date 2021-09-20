@@ -12,6 +12,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.AnimalsListItemLeftBinding
@@ -140,7 +141,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                                             binding.tvTitle.setTextColor(
                                                 ColorUtils.setAlphaComponent(
                                                     swatch.titleTextColor,
-                                                    255
+                                                    MAX_ALPHA
                                                 )
                                             )
                                         } else {

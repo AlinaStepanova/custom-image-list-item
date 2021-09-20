@@ -1,7 +1,6 @@
  package com.avs.imagelistitem.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +11,8 @@ import com.avs.imagelistitem.*
 import com.avs.imagelistitem.databinding.FragmentHomeBinding
 import com.avs.imagelistitem.recycler_view.HomeAdapter
 import com.avs.imagelistitem.recycler_view.ItemListener
-import com.avs.imagelistitem.recycler_view.ItemsAdapter
 
-class HomeFragment : Fragment() {
+ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
