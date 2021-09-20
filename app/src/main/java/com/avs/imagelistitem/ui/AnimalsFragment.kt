@@ -26,9 +26,12 @@ class AnimalsFragment : Fragment() {
         )
         val root: View = binding.root
         val adapter = this.context?.let {
-            AnimalsAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }
-            )
+            context?.let { context ->
+                AnimalsAdapter(
+                    ItemListener { item -> Log.d("items", item.toString()) },
+                    context
+                )
+            }
         }
         binding.rvRecyclerView.adapter = adapter
         val list: ArrayList<UIData> = setUpUIData()
@@ -38,12 +41,12 @@ class AnimalsFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(2, url16))
-        list.add(UIData(3, url17))
-        list.add(UIData(4, url18))
-        list.add(UIData(5, url19))
-        list.add(UIData(6, url20))
-        list.add(UIData(7, url21))
+        list.add(UIData(2, url16, "Parrot"))
+        list.add(UIData(3, url17, "Leopard"))
+        list.add(UIData(4, url20, "Giraffe"))
+        list.add(UIData(5, url19, "Dolphin"))
+        list.add(UIData(6, url21, "Lovely dog"))
+        list.add(UIData(7, url18, "Panda"))
         return list
     }
 
