@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homeFragment_to_animalsFragment"
             app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
     </fragment>
 
     <fragment
@@ -25,4 +28,9 @@
         android:id="@+id/animalsFragment"
         android:name="com.avs.imagelistitem.ui.AnimalsFragment"
         android:label="AnimalsFragment" />
+    <fragment
+        android:id="@+id/citiesFragment"
+        android:name="com.avs.imagelistitem.ui.CitiesFragment"
+        android:label="fragment_cities"
+        tools:layout="@layout/fragment_cities" />
 </navigation>

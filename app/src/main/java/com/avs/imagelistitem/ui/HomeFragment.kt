@@ -28,10 +28,16 @@ import com.avs.imagelistitem.recycler_view.ItemListener
         val adapter = this.context?.let {
             HomeAdapter(
                 ItemListener { data ->
-                    if (data.id == 3) {
-                        findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
-                    } else {
-                        findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
+                    when (data.id) {
+                        2 -> {
+                            findNavController().navigate(R.id.action_homeFragment_to_citiesFragment)
+                        }
+                        3 -> {
+                            findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
+                        }
+                        else -> {
+                            findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
+                        }
                     }
                 }, context = it
             )
