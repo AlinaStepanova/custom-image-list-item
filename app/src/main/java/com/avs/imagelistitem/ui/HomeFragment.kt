@@ -35,6 +35,9 @@ import com.avs.imagelistitem.recycler_view.ItemListener
                         3 -> {
                             findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
                         }
+                        4 -> {
+                            findNavController().navigate(R.id.action_homeFragment_to_landscapesFragment)
+                        }
                         else -> {
                             findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
                         }

@@ -12,7 +12,7 @@ import com.avs.imagelistitem.databinding.FragmentCitiesBinding
 import com.avs.imagelistitem.recycler_view.WidePicturesAdapter
 import com.avs.imagelistitem.recycler_view.ItemListener
 
-class CitiesFragment : Fragment() {
+class LandscapesFragment : Fragment() {
 
     private lateinit var binding: FragmentCitiesBinding
 
@@ -26,7 +26,7 @@ class CitiesFragment : Fragment() {
         val root: View = binding.root
         val adapter = this.context?.let {
             WidePicturesAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }, context = it
+                ItemListener { item -> Log.d("items", item.toString()) }, context = it, isLandscape = true
             )
         }
         binding.rvRecyclerView.adapter = adapter
@@ -37,12 +37,11 @@ class CitiesFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(22, url22, "Rome"))
-        list.add(UIData(24, url24, "Barcelona"))
-        list.add(UIData(25, url25, "London"))
-        list.add(UIData(23, url23, "Paris"))
-        list.add(UIData(26, url26, "Santorini"))
-        list.add(UIData(27, url27, "Phuket"))
+        list.add(UIData(28, url28, "Mountains"))
+        list.add(UIData(31, url31, "Grand Canyon"))
+        list.add(UIData(29, url29, "River"))
+        list.add(UIData(32, url32, "Toscana"))
+        list.add(UIData(30, url30, "Mountains"))
         return list
     }
 

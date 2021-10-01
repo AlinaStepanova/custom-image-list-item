@@ -37,3 +37,8 @@ const val url24 = "https://static.showit.co/1600/V0VfqG9JQVOlQGLCt-Zj0A/140628/b
 const val url25 = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/London-3.jpg"
 const val url26 = "https://breeze.ru/files/photos/towniya.jpg"
 const val url27 = "https://i.tpg.ua/news/news_20200630_100745_1593500865.jpg"
+const val url28 = "https://images.wallpapersden.com/image/download/beautiful-landscape-view-of-snow-covered-mountains_bGtma2mUmZqaraWkpJRnamtlrWZlbWU.jpg"
+const val url29 = "https://www.goodfreephotos.com/albums/italy/other-italy/beautiful-landscape-with-mountains-and-lakes-with-sky-in-italy.jpg"
+const val url30 = "https://ukrainetrek.com/blog/wp-content/uploads/2015/03/ukrainian-carpathians-heaven-on-earth.jpg"
+const val url31 = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Horseshoe-Bend-near-Page.jpg"
+const val url32 = "https://feerie.com.ua/sites/default/files/styles/for_tour2/public/2019-03/normal_toskana-italy-nature-2.jpg?h=4233ef75&itok=3MEXBMC_"
