@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_landscapesFragment"
             app:destination="@id/landscapesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
     </fragment>
 
     <fragment
@@ -40,4 +43,8 @@
         android:id="@+id/landscapesFragment"
         android:name="com.avs.imagelistitem.ui.LandscapesFragment"
         android:label="LandscapesFragment" />
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.avs.imagelistitem.ui.FoodFragment"
+        android:label="FoodFragment" />
 </navigation>

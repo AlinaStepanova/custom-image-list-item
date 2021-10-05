@@ -4,20 +4,14 @@ data class UIData(val id: Int, val url: String, val title: String = "", val subT
 
 const val MAX_ALPHA = 255
 
-const val url =
-    "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2021%2F02%2F18%2Flily-flower-gardeing-getty-0221-2000.jpg"
+const val url = "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2021%2F02%2F18%2Flily-flower-gardeing-getty-0221-2000.jpg"
 const val url2 = "https://s3.amazonaws.com/cdn.brecks.com/images/800/73689A.jpg"
-const val url3 =
-    "https://img.ukr.bio/data/articles/img/10315/gerbera_20.jpg"
-const val url4 =
-    "https://www.superflowers.com.ua/image/cache/data/vse%20bukety/gortenziya(1)-800x800.jpeg"
-const val url5 =
-    "https://matla-flowers.com.ua/image/catalog/news/hyacinths_for_planting.jpg"
+const val url3 = "https://img.ukr.bio/data/articles/img/10315/gerbera_20.jpg"
+const val url4 = "https://www.superflowers.com.ua/image/cache/data/vse%20bukety/gortenziya(1)-800x800.jpeg"
+const val url5 = "https://matla-flowers.com.ua/image/catalog/news/hyacinths_for_planting.jpg"
 const val url6 = "https://good-tips.pro/images/medicine/lilac/lilac-flowers.jpg"
-const val url7 =
-    "https://www.bloomsbythebox.com/img/product/xlarge/01747a__rose_blue_vendela_60cm.jpg"
-const val url8 =
-    "https://vseroste.com.ua/uploads/shop/products/large/baf51aa7-378e-11ea-99d5-9ad4867ba484.jpg"
+const val url7 = "https://www.bloomsbythebox.com/img/product/xlarge/01747a__rose_blue_vendela_60cm.jpg"
+const val url8 = "https://vseroste.com.ua/uploads/shop/products/large/baf51aa7-378e-11ea-99d5-9ad4867ba484.jpg"
 const val url9 = "https://yaskrava.com.ua/image/cache/7b52ebdf8e00eacf59d28e7bc20a9202.jpg"
 const val url10 = "https://papers.co/wallpaper/papers.co-mq18-red-flower-spring-fun-nature-6-wallpaper.jpg"
 const val url11 = "https://www.bella-toscana.com/wp-content/uploads/2019/05/pisa-tuscany.jpg"
@@ -42,3 +36,11 @@ const val url29 = "https://www.goodfreephotos.com/albums/italy/other-italy/beaut
 const val url30 = "https://ukrainetrek.com/blog/wp-content/uploads/2015/03/ukrainian-carpathians-heaven-on-earth.jpg"
 const val url31 = "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Horseshoe-Bend-near-Page.jpg"
 const val url32 = "https://feerie.com.ua/sites/default/files/styles/for_tour2/public/2019-03/normal_toskana-italy-nature-2.jpg?h=4233ef75&itok=3MEXBMC_"
+const val url33 = "https://druziatesta.ru/wp-content/uploads/chilichocola-pizza-master-klass.jpg"
+const val url34 = "https://www.gstatic.com/bfe/apps/website/img/h/87450465-pizza-1440.jpg"
+const val url35 = "https://img.freepik.com/free-photo/philadelphia-rolls-with-salmon-and-cream-cheese_114579-3289.jpg?size=626&ext=jpg&ga=GA1.2.1999508295.1630195200"
+const val url36 = "https://kingpizza.kh.ua/resources/articles/20200127212259_098be2cf.jpg"
+const val url37 = "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg"
+const val url38 = "https://images.immediate.co.uk/production/volatile/sites/30/2021/03/French-fries-b9e3e0c.jpg?quality=90&webp=true&resize=556,505"
+const val url39 = "https://www.mybakingaddiction.com/wp-content/uploads/2011/10/lr-0953-720x720.jpg"
+const val url40 = "https://kitchen335co.com/wp-content/uploads/2021/02/Strawberry-Macarons-BLOG-5-of-14-500x500.jpg"
