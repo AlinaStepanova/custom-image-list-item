@@ -16,7 +16,7 @@
             android:id="@+id/rvRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/food_list_item"
+            tools:listitem="@layout/list_item_food"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             app:layout_constraintBottom_toBottomOf="parent"

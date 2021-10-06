@@ -38,15 +38,15 @@ class FlowersFragment : Fragment() {
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(2, url2, "Title 2", "Some description"))
-        list.add(UIData(3, url3, "Title 3", "Some description"))
-        list.add(UIData(4, url4, "Title 4", "Some description"))
-        list.add(UIData(5, url5, "Title 5", "Some description"))
-        list.add(UIData(6, url6, "Title 6", "Some description"))
-        list.add(UIData(7, url7, "Title 7", "Some description"))
-        list.add(UIData(8, url8, "Title 8", "Some description"))
-        list.add(UIData(9, url9, "Title 9", "Some description"))
-        list.add(UIData(10, url10, "Title 10", "Some description"))
+        list.add(UIData(2, url2, "Lily", "Lilium candidum"))
+        list.add(UIData(3, url3, "Gerbera", "Gerbera jamesonii in Orange"))
+        list.add(UIData(4, url4, "Hydrangea", "Hydrangea macrophylla"))
+        list.add(UIData(5, url5, "Hyacinth", "Hyacinthus orientalis"))
+        list.add(UIData(6, url6, "Syringa", "Syringa vulgaris"))
+        list.add(UIData(7, url7, "Rose", "Rosa pendulina"))
+        list.add(UIData(8, url8, "Peony", "Paeonia suffruticosa"))
+        list.add(UIData(9, url9, "Narcissus", "Narcissus poeticus"))
+        list.add(UIData(10, url10, "Tulips", "Tulipa × gesneriana"))
         return list
     }
 
