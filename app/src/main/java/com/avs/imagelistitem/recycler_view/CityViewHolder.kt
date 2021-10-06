@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.CityListItemBinding
+import com.avs.imagelistitem.databinding.ListItemCityBinding
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
 
-class CityViewHolder private constructor(private val binding: CityListItemBinding) :
+class CityViewHolder private constructor(private val binding: ListItemCityBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     private lateinit var target: Target
@@ -86,7 +86,7 @@ class CityViewHolder private constructor(private val binding: CityListItemBindin
 
         fun from(parent: ViewGroup): CityViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = CityListItemBinding.inflate(layoutInflater, parent, false)
+            val binding = ListItemCityBinding.inflate(layoutInflater, parent, false)
             return CityViewHolder(binding)
         }
     }

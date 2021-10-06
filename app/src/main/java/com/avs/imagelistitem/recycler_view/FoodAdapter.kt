@@ -14,8 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.FoodListItemBinding
-import com.avs.imagelistitem.databinding.ListItemBinding
+import com.avs.imagelistitem.databinding.ListItemFoodBinding
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
@@ -36,7 +35,7 @@ class FoodAdapter(private val clickListener: ItemListener, private val context: 
         holder.cleanup()
     }
 
-    class ItemViewHolder private constructor(private val binding: FoodListItemBinding) :
+    class ItemViewHolder private constructor(private val binding: ListItemFoodBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private lateinit var target: Target
@@ -117,7 +116,7 @@ class FoodAdapter(private val clickListener: ItemListener, private val context: 
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = FoodListItemBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemFoodBinding.inflate(layoutInflater, parent, false)
                 return ItemViewHolder(binding)
             }
         }

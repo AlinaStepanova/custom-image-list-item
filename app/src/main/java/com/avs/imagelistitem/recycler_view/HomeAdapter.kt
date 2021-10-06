@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.HomeListItemBinding
+import com.avs.imagelistitem.databinding.ListItemHomeBinding
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
@@ -36,7 +36,7 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
         holder.cleanup()
     }
 
-    class ItemViewHolder private constructor(private val binding: HomeListItemBinding) :
+    class ItemViewHolder private constructor(private val binding: ListItemHomeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private lateinit var target: Target
@@ -141,7 +141,7 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = HomeListItemBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemHomeBinding.inflate(layoutInflater, parent, false)
                 return ItemViewHolder(binding)
             }
         }

@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.LandscapeListItemBinding
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import androidx.annotation.ColorInt
+import com.avs.imagelistitem.databinding.ListItemLandscapeBinding
 import kotlin.math.roundToInt
 
 
-class LandscapeViewHolder private constructor(private val binding: LandscapeListItemBinding) :
+class LandscapeViewHolder private constructor(private val binding: ListItemLandscapeBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     private lateinit var target: Target
@@ -99,7 +99,7 @@ class LandscapeViewHolder private constructor(private val binding: LandscapeList
 
         fun from(parent: ViewGroup): LandscapeViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = LandscapeListItemBinding.inflate(layoutInflater, parent, false)
+            val binding = ListItemLandscapeBinding.inflate(layoutInflater, parent, false)
             return LandscapeViewHolder(binding)
         }
     }

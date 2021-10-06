@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.AnimalsListItemLeftBinding
-import com.avs.imagelistitem.databinding.AnimalsListItemRightBinding
+import com.avs.imagelistitem.databinding.ListItemAnimalLeftBinding
+import com.avs.imagelistitem.databinding.ListItemAnimalRightBinding
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
@@ -54,7 +54,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
             item: UIData,
             context: Context
         ) {
-            if (binding is AnimalsListItemLeftBinding) {
+            if (binding is ListItemAnimalLeftBinding) {
                 binding.itemClickListener = movieClickListener
                 binding.uiData = item
                 target = initTarget(item, context)
@@ -64,7 +64,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                     .build()
                 loadImage(item)
             } else {
-                binding as AnimalsListItemRightBinding
+                binding as ListItemAnimalRightBinding
                 binding.itemClickListener = movieClickListener
                 binding.uiData = item
                 target = initTarget(item, context)
@@ -88,10 +88,10 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
 
         fun cleanup() {
             Picasso.get().cancelRequest(target)
-            if (binding is AnimalsListItemLeftBinding) {
+            if (binding is ListItemAnimalLeftBinding) {
                 binding.ivPoster.setImageDrawable(null)
             } else {
-                binding as AnimalsListItemRightBinding
+                binding as ListItemAnimalRightBinding
                 binding.ivPoster.setImageDrawable(null)
             }
         }
@@ -100,7 +100,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
             return object : Target {
                 override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
                     bitmap?.let {
-                        if (binding is AnimalsListItemLeftBinding) {
+                        if (binding is ListItemAnimalLeftBinding) {
                             binding.ivPoster.setImageBitmap(bitmap)
                             Palette.from(bitmap)
                                 .generate { palette ->
@@ -128,7 +128,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                                     }
                                 }
                         } else {
-                            binding as AnimalsListItemRightBinding
+                            binding as ListItemAnimalRightBinding
                             binding.ivPoster.setImageBitmap(bitmap)
                             Palette.from(bitmap)
                                 .generate { palette ->
@@ -160,19 +160,19 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                 }
 
                 override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
-                    if (binding is AnimalsListItemLeftBinding) {
+                    if (binding is ListItemAnimalLeftBinding) {
                         binding.ivPoster.setImageDrawable(errorDrawable)
                     } else {
-                        binding as AnimalsListItemRightBinding
+                        binding as ListItemAnimalRightBinding
                         binding.ivPoster.setImageDrawable(errorDrawable)
                     }
                 }
 
                 override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-                    if (binding is AnimalsListItemLeftBinding) {
+                    if (binding is ListItemAnimalLeftBinding) {
                         binding.ivPoster.setImageDrawable(placeHolderDrawable)
                     } else {
-                        binding as AnimalsListItemRightBinding
+                        binding as ListItemAnimalRightBinding
                         binding.ivPoster.setImageDrawable(placeHolderDrawable)
                     }
                 }
@@ -187,13 +187,13 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
 
             fun fromLeft(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = AnimalsListItemLeftBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemAnimalLeftBinding.inflate(layoutInflater, parent, false)
                 return ItemViewHolder(binding)
             }
 
             fun fromRight(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = AnimalsListItemRightBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemAnimalRightBinding.inflate(layoutInflater, parent, false)
                 return ItemViewHolder(binding)
             }
         }

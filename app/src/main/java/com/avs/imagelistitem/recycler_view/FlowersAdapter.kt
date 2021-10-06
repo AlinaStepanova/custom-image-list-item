@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
-import com.avs.imagelistitem.databinding.ListItemBinding
+import com.avs.imagelistitem.databinding.ListItemFlowerBinding
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
@@ -35,7 +35,7 @@ class FlowersAdapter(private val clickListener: ItemListener, private val contex
         holder.cleanup()
     }
 
-    class ItemViewHolder private constructor(private val binding: ListItemBinding) :
+    class ItemViewHolder private constructor(private val binding: ListItemFlowerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private lateinit var target: Target
@@ -126,7 +126,7 @@ class FlowersAdapter(private val clickListener: ItemListener, private val contex
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ListItemBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemFlowerBinding.inflate(layoutInflater, parent, false)
                 return ItemViewHolder(binding)
             }
         }

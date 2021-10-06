@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/home_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/landscape_list_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_item_food.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>
