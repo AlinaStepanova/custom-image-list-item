@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.avs.imagelistitem.ui.HomeFragment"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_flowersFragment"
             app:destination="@id/flowersFragment" />
@@ -36,7 +36,8 @@
     <fragment
         android:id="@+id/animalsFragment"
         android:name="com.avs.imagelistitem.ui.AnimalsFragment"
-        android:label="AnimalsFragment" />
+        android:label="AnimalsFragment"
+        tools:layout="@layout/fragment_animals" />
     <fragment
         android:id="@+id/citiesFragment"
         android:name="com.avs.imagelistitem.ui.CitiesFragment"
@@ -45,13 +46,16 @@
     <fragment
         android:id="@+id/landscapesFragment"
         android:name="com.avs.imagelistitem.ui.LandscapesFragment"
-        android:label="LandscapesFragment" />
+        android:label="LandscapesFragment"
+        tools:layout="@layout/fragment_cities" />
     <fragment
         android:id="@+id/foodFragment"
         android:name="com.avs.imagelistitem.ui.FoodFragment"
-        android:label="FoodFragment" />
+        android:label="FoodFragment"
+        tools:layout="@layout/fragment_food" />
     <fragment
         android:id="@+id/artworksFragment"
         android:name="com.avs.imagelistitem.ui.ArtworksFragment"
-        android:label="ArtworksFragment" />
+        android:label="ArtworksFragment"
+        tools:layout="@layout/fragment_home" />
 </navigation>

@@ -26,7 +26,7 @@ class LandscapesFragment : Fragment() {
         val root: View = binding.root
         val adapter = this.context?.let {
             WidePicturesAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }, context = it, isLandscape = true
+                ItemListener { }, context = it, isLandscape = true
             )
         }
         binding.rvRecyclerView.adapter = adapter

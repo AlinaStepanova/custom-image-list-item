@@ -1,7 +1,6 @@
 package com.avs.imagelistitem.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,7 @@ class FoodFragment : Fragment() {
         val root: View = binding.root
         val adapter = this.context?.let {
             FoodAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }, context = it
+                ItemListener { }, context = it
             )
         }
         binding.rvRecyclerView.adapter = adapter

@@ -1,4 +1,4 @@
- package com.avs.imagelistitem.ui
+package com.avs.imagelistitem.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.avs.imagelistitem.databinding.FragmentHomeBinding
 import com.avs.imagelistitem.recycler_view.shared.HomeAdapter
 import com.avs.imagelistitem.recycler_view.shared.ItemListener
 
- class HomeFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -29,24 +29,12 @@ import com.avs.imagelistitem.recycler_view.shared.ItemListener
             HomeAdapter(
                 ItemListener { data ->
                     when (data.id) {
-                        2 -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_citiesFragment)
-                        }
-                        3 -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
-                        }
-                        4 -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_landscapesFragment)
-                        }
-                        5 -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_foodFragment)
-                        }
-                        6 -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_artworksFragment)
-                        }
-                        else -> {
-                            findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
-                        }
+                        2 -> findNavController().navigate(R.id.action_homeFragment_to_citiesFragment)
+                        3 -> findNavController().navigate(R.id.action_homeFragment_to_animalsFragment)
+                        4 -> findNavController().navigate(R.id.action_homeFragment_to_landscapesFragment)
+                        5 -> findNavController().navigate(R.id.action_homeFragment_to_foodFragment)
+                        6 -> findNavController().navigate(R.id.action_homeFragment_to_artworksFragment)
+                        else -> findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)
                     }
                 }, context = it
             )
