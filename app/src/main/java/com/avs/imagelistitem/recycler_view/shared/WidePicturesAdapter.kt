@@ -1,10 +1,12 @@
-package com.avs.imagelistitem.recycler_view
+package com.avs.imagelistitem.recycler_view.shared
 
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.avs.imagelistitem.UIData
+import com.avs.imagelistitem.recycler_view.ItemDiffCallback
+import com.avs.imagelistitem.recycler_view.ItemListener
 
 class WidePicturesAdapter(private val clickListener: ItemListener, private val context: Context, private val isLandscape: Boolean = false) :
     ListAdapter<UIData, RecyclerView.ViewHolder>(ItemDiffCallback()) {

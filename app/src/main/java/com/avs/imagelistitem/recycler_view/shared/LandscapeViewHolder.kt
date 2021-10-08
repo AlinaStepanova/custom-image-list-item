@@ -1,4 +1,4 @@
-package com.avs.imagelistitem.recycler_view
+package com.avs.imagelistitem.recycler_view.shared
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import androidx.annotation.ColorInt
 import com.avs.imagelistitem.databinding.ListItemLandscapeBinding
+import com.avs.imagelistitem.recycler_view.ItemListener
 import kotlin.math.roundToInt
 
 

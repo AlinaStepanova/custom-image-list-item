@@ -1,6 +1,7 @@
 package com.avs.imagelistitem.recycler_view
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.Gravity
@@ -109,11 +110,15 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                                         binding.idContainer.setBackgroundColor(
                                             swatch?.rgb ?: getColorById(context, R.color.black)
                                         )
+                                        binding.ivPoster.strokeColor = swatch?.rgb?.let { color ->
+                                            ColorStateList.valueOf(color)
+                                        }
+                                        binding.ivPoster.strokeWidth = BORDER_SIZE
                                         if (swatch != null) {
                                             binding.tvTitle.setTextColor(
                                                 ColorUtils.setAlphaComponent(
                                                     swatch.titleTextColor,
-                                                    255
+                                                    MAX_ALPHA
                                                 )
                                             )
                                         } else {
@@ -137,6 +142,10 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
                                         binding.idContainer.setBackgroundColor(
                                             swatch?.rgb ?: getColorById(context, R.color.black)
                                         )
+                                        binding.ivPoster.strokeColor = swatch?.rgb?.let { color ->
+                                            ColorStateList.valueOf(color)
+                                        }
+                                        binding.ivPoster.strokeWidth = BORDER_SIZE
                                         if (swatch != null) {
                                             binding.tvTitle.setTextColor(
                                                 ColorUtils.setAlphaComponent(
@@ -184,6 +193,7 @@ class AnimalsAdapter(private val clickListener: ItemListener, private val contex
         companion object {
 
             const val CIRCLE_SIZE = 480
+            const val BORDER_SIZE = 8F
 
             fun fromLeft(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
