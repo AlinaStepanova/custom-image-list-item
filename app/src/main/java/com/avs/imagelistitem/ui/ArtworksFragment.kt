@@ -35,12 +35,12 @@ import com.avs.imagelistitem.recycler_view.shared.ItemListener
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(1, url, "Flowers 1"))
-        list.add(UIData(2, url11, "Cities 1"))
-        list.add(UIData(3, url12, "Animals 1"))
-        list.add(UIData(4, url13, "Landscapes 1"))
-        list.add(UIData(5, url14, "Food 1"))
-        list.add(UIData(6, url15, "Artworks 1"))
+        list.add(UIData(41, url41, "Woman with a Parasol"))
+        list.add(UIData(42, url42, "Sunflowers "))
+        list.add(UIData(43, url43, "La Scapigliata"))
+        list.add(UIData(44, url44, "Girl with a Pearl Earring"))
+        list.add(UIData(45, url45, "Empty nest"))
+        list.add(UIData(46, url46, "The Dream"))
         return list
     }
 
