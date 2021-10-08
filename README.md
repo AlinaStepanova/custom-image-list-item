@@ -3,13 +3,13 @@ Examples of custom RecyclerView items using Data Binding
 
 <h4>Features:</h4>
 
-<li>Loading images urls with the help of a <a href="https://square.github.io/picasso/">Picasso</a> library</li>
+<li>Loading images urls with the help of a <a href="https://square.github.io/picasso/" target="_blank">Picasso</a> library</li>
 
-<li><b>Automatically</b> detecting a dominant color of an image using <a href="https://developer.android.com/reference/androidx/palette/graphics/Palette/">Palette API</a></li>
+<li><b>Automatically</b> detecting a dominant color of an image using <a href="https://developer.android.com/reference/androidx/palette/graphics/Palette/" target="_blank">Palette API</a></li>
 
 <li>Based on a dominant color of the image <b>automatically</b> setting up background and border colors, applying contrasting title and description colors</li>
 
-<li>Customising shape of an image using <a href="https://developer.android.com/reference/com/google/android/material/imageview/ShapeableImageView">ShapeableImageView</a></li>
+<li>Customising shape of an image using <a href="https://developer.android.com/reference/com/google/android/material/imageview/ShapeableImageView" target="_blank">ShapeableImageView</a></li>
 
 <p></p>
 
