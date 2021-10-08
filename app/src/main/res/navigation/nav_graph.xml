@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_foodFragment"
             app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_artworksFragment"
+            app:destination="@id/artworksFragment" />
     </fragment>
 
     <fragment
@@ -47,4 +50,8 @@
         android:id="@+id/foodFragment"
         android:name="com.avs.imagelistitem.ui.FoodFragment"
         android:label="FoodFragment" />
+    <fragment
+        android:id="@+id/artworksFragment"
+        android:name="com.avs.imagelistitem.ui.ArtworksFragment"
+        android:label="ArtworksFragment" />
 </navigation>

@@ -15,6 +15,8 @@ import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemFlowerBinding
+import com.avs.imagelistitem.recycler_view.shared.ItemDiffCallback
+import com.avs.imagelistitem.recycler_view.shared.ItemListener
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target

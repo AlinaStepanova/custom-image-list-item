@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import androidx.annotation.ColorInt
 import com.avs.imagelistitem.databinding.ListItemLandscapeBinding
-import com.avs.imagelistitem.recycler_view.ItemListener
 import kotlin.math.roundToInt
 
 

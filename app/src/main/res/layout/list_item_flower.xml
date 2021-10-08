@@ -11,7 +11,7 @@
 
         <variable
             name="itemClickListener"
-            type="com.avs.imagelistitem.recycler_view.ItemListener" />
+            type="com.avs.imagelistitem.recycler_view.shared.ItemListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
@@ -15,6 +14,8 @@ import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemFoodBinding
+import com.avs.imagelistitem.recycler_view.shared.ItemDiffCallback
+import com.avs.imagelistitem.recycler_view.shared.ItemListener
 import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target

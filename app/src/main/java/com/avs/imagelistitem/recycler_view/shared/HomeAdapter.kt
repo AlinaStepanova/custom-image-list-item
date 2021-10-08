@@ -1,10 +1,10 @@
-package com.avs.imagelistitem.recycler_view
+package com.avs.imagelistitem.recycler_view.shared
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
@@ -20,12 +20,12 @@ import com.google.android.material.shape.CornerFamily
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
-class HomeAdapter(private val clickListener: ItemListener, private val context: Context) :
+class HomeAdapter(private val clickListener: ItemListener, private val context: Context, private val isArtworks: Boolean = false) :
     ListAdapter<UIData, HomeAdapter.ItemViewHolder>(ItemDiffCallback()) {
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(clickListener, item, position, context)
+        holder.bind(clickListener, item, position, context, isArtworks)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -45,38 +45,14 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
             movieClickListener: ItemListener,
             item: UIData,
             position: Int,
-            context: Context
+            context: Context,
+            isArtworks: Boolean
         ) {
             binding.itemClickListener = movieClickListener
             binding.uiData = item
-            target = initTarget(item, context)
-            if (item.subTitle == null) {
-                binding.tvSubTitle.visibility = View.GONE
-            }
+            target = initTarget(item, context, isArtworks)
             binding.ivPoster.tag = target
-            if (position % 2 == 0) {
-                binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
-                    .toBuilder()
-                    .setTopLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                    .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                    .build()
-                binding.vBackgroundColor.shapeAppearanceModel =
-                    binding.vBackgroundColor.shapeAppearanceModel
-                        .toBuilder()
-                        .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                        .build()
-            } else {
-                binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
-                    .toBuilder()
-                    .setTopRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                    .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                    .build()
-                binding.vBackgroundColor.shapeAppearanceModel =
-                    binding.vBackgroundColor.shapeAppearanceModel
-                        .toBuilder()
-                        .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
-                        .build()
-            }
+            setUpImageShape(isArtworks, position)
             Picasso.get()
                 .load(item.url)
                 .placeholder(R.drawable.ic_baseline_image_24)
@@ -84,12 +60,40 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
                 .into(target)
         }
 
+        private fun setUpImageShape(isArtworks: Boolean, position: Int) {
+            if (!isArtworks) {
+                if (position % 2 == 0) {
+                    binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
+                        .toBuilder()
+                        .setTopLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .build()
+                    binding.vBackgroundColor.shapeAppearanceModel =
+                        binding.vBackgroundColor.shapeAppearanceModel
+                            .toBuilder()
+                            .setBottomRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                            .build()
+                } else {
+                    binding.ivPoster.shapeAppearanceModel = binding.ivPoster.shapeAppearanceModel
+                        .toBuilder()
+                        .setTopRightCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                        .build()
+                    binding.vBackgroundColor.shapeAppearanceModel =
+                        binding.vBackgroundColor.shapeAppearanceModel
+                            .toBuilder()
+                            .setBottomLeftCorner(CornerFamily.ROUNDED, CORNER_SIZE)
+                            .build()
+                }
+            }
+        }
+
         fun cleanup() {
             Picasso.get().cancelRequest(target)
             binding.ivPoster.setImageDrawable(null)
         }
 
-        private fun initTarget(item: UIData, context: Context): Target {
+        private fun initTarget(item: UIData, context: Context, isArtworks: Boolean): Target {
             return object : Target {
                 override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
                     bitmap?.let {
@@ -101,23 +105,23 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
                                     binding.vBackgroundColor.setBackgroundColor(
                                         swatch?.rgb ?: getColorById(context, R.color.black)
                                     )
+                                    if (isArtworks) {
+                                        binding.ivPoster.strokeColor = swatch?.rgb?.let { color ->
+                                            ColorStateList.valueOf(color)
+                                        }
+                                        binding.ivPoster.strokeWidth = BORDER_SIZE
+                                        binding.tvTitle.textSize = TEXT_SIZE
+                                    }
                                     if (swatch != null) {
                                         binding.tvTitle.setTextColor(
                                             ColorUtils.setAlphaComponent(swatch.titleTextColor, MAX_ALPHA)
-                                        )
-                                        binding.tvSubTitle.setTextColor(
-                                            ColorUtils.setAlphaComponent(swatch.bodyTextColor, MAX_ALPHA)
                                         )
                                     } else {
                                         binding.tvTitle.setTextColor(
                                             getColorById(context, R.color.white)
                                         )
-                                        binding.tvSubTitle.setTextColor(
-                                            getColorById(context, R.color.white)
-                                        )
                                     }
                                     binding.tvTitle.text = item.title
-                                    binding.tvSubTitle.text = item.subTitle
                                 }
                             }
                     }
@@ -138,6 +142,8 @@ class HomeAdapter(private val clickListener: ItemListener, private val context: 
         companion object {
 
             const val CORNER_SIZE = 75F
+            const val BORDER_SIZE = 24F
+            const val TEXT_SIZE = 22F
 
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)

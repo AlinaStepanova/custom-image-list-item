@@ -13,7 +13,6 @@ import com.avs.imagelistitem.MAX_ALPHA
 import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemCityBinding
-import com.avs.imagelistitem.recycler_view.ItemListener
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 

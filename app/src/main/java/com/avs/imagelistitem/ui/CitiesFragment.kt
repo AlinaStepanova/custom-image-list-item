@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.avs.imagelistitem.*
 import com.avs.imagelistitem.databinding.FragmentCitiesBinding
 import com.avs.imagelistitem.recycler_view.shared.WidePicturesAdapter
-import com.avs.imagelistitem.recycler_view.ItemListener
+import com.avs.imagelistitem.recycler_view.shared.ItemListener
 
 class CitiesFragment : Fragment() {
 

@@ -1,20 +1,19 @@
-package com.avs.imagelistitem.ui
+ package com.avs.imagelistitem.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.avs.imagelistitem.*
-import com.avs.imagelistitem.databinding.FragmentFoodBinding
+import com.avs.imagelistitem.databinding.FragmentHomeBinding
+import com.avs.imagelistitem.recycler_view.shared.HomeAdapter
 import com.avs.imagelistitem.recycler_view.shared.ItemListener
-import com.avs.imagelistitem.recycler_view.FoodAdapter
 
-class FoodFragment : Fragment() {
+ class ArtworksFragment : Fragment() {
 
-    private lateinit var binding: FragmentFoodBinding
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,30 +21,26 @@ class FoodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_food, container, false
+            inflater, R.layout.fragment_home, container, false
         )
         val root: View = binding.root
         val adapter = this.context?.let {
-            FoodAdapter(
-                ItemListener { item -> Log.d("items", item.toString()) }, context = it
-            )
+            HomeAdapter(ItemListener { }, context = it, isArtworks = true)
         }
         binding.rvRecyclerView.adapter = adapter
-        val list: ArrayList<UIData> = setUpUIData()
+        val list = setUpUIData()
         adapter?.submitList(list)
         return root
     }
 
     private fun setUpUIData(): ArrayList<UIData> {
         val list: ArrayList<UIData> = ArrayList()
-        list.add(UIData(33, url33, "Pizza"))
-        list.add(UIData(34, url34, "Peperoni"))
-        list.add(UIData(35, url35, "Philadelphia roll"))
-        list.add(UIData(36, url36, "Sushi"))
-        list.add(UIData(37, url37, "Burger"))
-        list.add(UIData(38, url38, "French fries"))
-        list.add(UIData(39, url39, "Cake"))
-        list.add(UIData(40, url40, "Macaroons"))
+        list.add(UIData(1, url, "Flowers 1"))
+        list.add(UIData(2, url11, "Cities 1"))
+        list.add(UIData(3, url12, "Animals 1"))
+        list.add(UIData(4, url13, "Landscapes 1"))
+        list.add(UIData(5, url14, "Food 1"))
+        list.add(UIData(6, url15, "Artworks 1"))
         return list
     }
 

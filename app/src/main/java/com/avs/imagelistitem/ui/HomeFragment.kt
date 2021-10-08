@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.avs.imagelistitem.*
 import com.avs.imagelistitem.databinding.FragmentHomeBinding
-import com.avs.imagelistitem.recycler_view.HomeAdapter
-import com.avs.imagelistitem.recycler_view.ItemListener
+import com.avs.imagelistitem.recycler_view.shared.HomeAdapter
+import com.avs.imagelistitem.recycler_view.shared.ItemListener
 
  class HomeFragment : Fragment() {
 
@@ -40,6 +40,9 @@ import com.avs.imagelistitem.recycler_view.ItemListener
                         }
                         5 -> {
                             findNavController().navigate(R.id.action_homeFragment_to_foodFragment)
+                        }
+                        6 -> {
+                            findNavController().navigate(R.id.action_homeFragment_to_artworksFragment)
                         }
                         else -> {
                             findNavController().navigate(R.id.action_homeFragment_to_flowersFragment)

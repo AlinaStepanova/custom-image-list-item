@@ -18,6 +18,8 @@ import com.avs.imagelistitem.R
 import com.avs.imagelistitem.UIData
 import com.avs.imagelistitem.databinding.ListItemAnimalLeftBinding
 import com.avs.imagelistitem.databinding.ListItemAnimalRightBinding
+import com.avs.imagelistitem.recycler_view.shared.ItemDiffCallback
+import com.avs.imagelistitem.recycler_view.shared.ItemListener
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
